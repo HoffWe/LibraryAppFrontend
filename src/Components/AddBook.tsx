@@ -6,7 +6,7 @@ export const AddBook = () => {
         {title:"", authorsId:[""],isbn:"",quantity:"",releaseDate:"",genres:[Genres.COOKBOOK]});
     const [wasEdited,setWasEdited] = useState<boolean>(false)
     const [isError,setIsError]= useState<boolean>(true)
-    useEffect(()=>setBook(prevState => {return {...prevState,genres: [Genres.FANTASY]}}),[])
+    useEffect(()=>setBook(prevState => {return {...prevState,genres: [...prevState.genres,Genres.FANTASY]}}),[])
     const addBook = () => {
         console.log({
             book
@@ -20,11 +20,12 @@ export const AddBook = () => {
         setWasEdited(true);
         setIsError(e.target.value.length <= 0);
     };
+
+
     const onSelectChanged = (e: React.ChangeEvent<HTMLSelectElement>)=>{
-        setBook(prevState => {
-            return{...prevState,[e.target.name]:e.target.value}
-        })
+        useEffect(()=>setBook(prevState => {return {...prevState,genres: [...prevState.genres,Genres.FANTASY]}}),[])
     }
+
 
     return (
         <div>
@@ -72,6 +73,15 @@ export const AddBook = () => {
                 name="releaseDate"
                 type="date"
             ></input>
+            <select multiple={true}
+                    value={book.genres}
+                    placeholder={"Wybierz gatunki książki"}
+                    onChange={onSelectChanged}
+                    name="genres">
+                {Object.values(Genres).map((value, key) => (
+                    <option value={key} key={key}>{value}</option>
+                    ))}
+            </select>
 
 
             <div
