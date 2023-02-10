@@ -1,12 +1,12 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Genres} from "../Const/Genres";
 
 export const AddBook = () => {
     const [book,setBook] = useState(
-        {title:"", authorsId:[""],isbn:"",quantity:"",releaseDate:"",genres:[]});
+        {title:"", authorsId:[""],isbn:"",quantity:"",releaseDate:"",genres:[Genres.COOKBOOK]});
     const [wasEdited,setWasEdited] = useState<boolean>(false)
     const [isError,setIsError]= useState<boolean>(true)
-    // setBook(prevState => {return {...prevState,genres: Genres.COOKBOOK}})
+    useEffect(()=>setBook(prevState => {return {...prevState,genres: [Genres.FANTASY]}}),[])
     const addBook = () => {
         console.log({
             book
@@ -72,13 +72,7 @@ export const AddBook = () => {
                 name="releaseDate"
                 type="date"
             ></input>
-            <select multiple
-                    value={book.genres}
-                    placeholder={"Podaj gatunek książki"}
-                    onChange={onSelectChanged}
-                    name="genres"
-            >
-            </select>
+
 
             <div
                 style={{
