@@ -18,11 +18,11 @@ function App() {
     <AuthorHomePage />
   );
 =======
-    useAxios();
+  useAxios();
 
-    return (
-        <AuthorHomePage />
-    );
+  return (
+    <AuthorHomePage />
+  );
 >>>>>>> master
 }
 
