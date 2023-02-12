@@ -11,7 +11,7 @@ export enum Genres {
     THRILLER="Thriller",
     BIOGRAPHY="Biografia",
     REPORTAGE="Reportaż",
-    YOUTH_NOVEL="Powieść młodieżowa",
+    YOUTH_NOVEL="Powieść młodzieżowa",
     TRAVELOG="Książka podróżnicza",
     COOKBOOK="Książka kucharska",
     GUIDE="Poradnik"

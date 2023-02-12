@@ -1,7 +1,7 @@
-import { authorApi } from "../hook/useAxios";
-import { AddAuthorRequest } from "../models/AddAuthorRequest";
-import Author from "../models/Author";
-import { UpdateAuthorRequest } from "../models/UpdateAuthorRequest";
+import { authorApi } from "../Hooks/useAxios";
+import { AddAuthorRequest } from "../Models/Author/AddAuthorRequest";
+import Author from "../Models/Author/Author";
+import { UpdateAuthorRequest } from "../Models/Author/UpdateAuthorRequest";
 
 
 

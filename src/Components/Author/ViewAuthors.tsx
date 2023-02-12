@@ -14,11 +14,11 @@ import {
   Box,
   Button,
 } from "@chakra-ui/react";
-import "./models/Author";
-import Author from "./models/Author";
-import { AuthorApi } from "./api/AuthorApi";
-import { UpdateAuthor } from "./UpdateAutkor";
-import { ShowPage } from "./models/showPage";
+import "../../Models/Author/Author";
+import Author from "../../Models/Author/Author";
+import { AuthorApi } from "../../Api/AuthorApi";
+import { UpdateAuthor } from "./UpdateAuthor";
+import { ShowPage } from "../../Models/Author/showPage";
 
 
 

@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Genres} from "../Const/Genres";
+import {Genres} from "../../Const/Genres";
 
 export const AddBook = () => {
     const [book,setBook] = useState(

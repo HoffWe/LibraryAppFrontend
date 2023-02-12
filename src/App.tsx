@@ -3,12 +3,12 @@
 import "./App.css";
 
 import { ChakraProvider } from "@chakra-ui/react";
-import { AddAuthor } from "./Authors/AddAuthor";
-import { SearchAuthorByName } from "./Authors/SearchAuthorByName";
-import { ViewAuthors } from "./Authors/ViewAuthors";
-import { useAxios } from "./Authors/hook/useAxios";
-import { UpdateAuthor } from "./Authors/UpdateAutkor";
-import { AuthorHomePage } from "./Authors/AuthorHomePage";
+import { AddAuthor } from "./Components/Author/AddAuthor";
+import { SearchAuthorByName } from "./Components/Author/SearchAuthorByName";
+import { ViewAuthors } from "./Components/Author/ViewAuthors";
+import { useAxios } from "./Hooks/useAxios";
+import { UpdateAuthor } from "./Components/Author/UpdateAuthor";
+import { AuthorHomePage } from "./Components/Author/AuthorHomePage";
 
 
 function App() {

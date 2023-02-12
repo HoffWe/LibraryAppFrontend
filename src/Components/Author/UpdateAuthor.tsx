@@ -1,6 +1,6 @@
 import { Button, Input } from "@chakra-ui/react"
 import React from "react";
-import { AuthorApi } from "./api/AuthorApi";
+import { AuthorApi } from "../../Api/AuthorApi";
 
 export const UpdateAuthor = () =>{
     const[name, setName] = React.useState<string>("");

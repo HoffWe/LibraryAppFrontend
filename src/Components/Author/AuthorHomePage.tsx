@@ -1,9 +1,9 @@
 import { Button, ChakraProvider, list } from "@chakra-ui/react"
 import { useState } from "react"
 import { AddAuthor } from "./AddAuthor"
-import { ShowPage } from "./models/showPage"
+import { ShowPage } from "../../Models/Author/showPage"
 import { SearchAuthorByName } from "./SearchAuthorByName"
-import { UpdateAuthor } from "./UpdateAutkor"
+import { UpdateAuthor } from "./UpdateAuthor"
 import { ViewAuthors } from "./ViewAuthors"
 
 export const AuthorHomePage = () => {

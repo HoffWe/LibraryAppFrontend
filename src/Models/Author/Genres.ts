@@ -8,7 +8,7 @@ export enum Genres{
     Thriller="THRILLER",
     Biografia="BIOGRAPHY",
     Reportaż="REPORTAGE",
-    PowieśćMłodieżowa="YOUTH_NOVEL",
+    PowieśćMłodzieżowa="YOUTH_NOVEL",
     KsiążkaPodróżnicza="TRAVELOG",
     KsiążkaKucharska="COOKBOOK",
     Poradnik="GUIDE"
