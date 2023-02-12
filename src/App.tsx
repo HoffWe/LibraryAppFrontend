@@ -1,16 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { AddReview } from './Components/AddReview';
-import {AddBook} from "./Components/AddBook";
+
+
+import "./App.css";
+
+import { ChakraProvider } from "@chakra-ui/react";
+import { AddAuthor } from "./Authors/AddAuthor";
+import { SearchAuthorByName } from "./Authors/SearchAuthorByName";
+import { ViewAuthors } from "./Authors/ViewAuthors";
+import { useAxios } from "./Authors/hook/useAxios";
+import { UpdateAuthor } from "./Authors/UpdateAutkor";
+import { AuthorHomePage } from "./Authors/AuthorHomePage";
+
 
 function App() {
+
+
+  useAxios();
+
   return (
-    <div className="App">
-      <AddReview userName={"Testowy Test"} title={"Zmierzch"} />
-        <AddBook/>
-    </div>
+
+    <AuthorHomePage />
   );
+
 }
 
 export default App;
