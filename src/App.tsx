@@ -11,11 +11,19 @@ import { AuthorHomePage } from "./Authors/AuthorHomePage";
 
 function App() {
 
+<<<<<<< HEAD
   useAxios();
 
   return (
     <AuthorHomePage />
   );
+=======
+    useAxios();
+
+    return (
+        <AuthorHomePage />
+    );
+>>>>>>> master
 }
 
 export default App;
