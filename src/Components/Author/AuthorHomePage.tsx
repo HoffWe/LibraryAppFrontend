@@ -13,6 +13,11 @@ export const AuthorHomePage = () => {
   const addAuthorHandler = () =>{
     setShowPage(ShowPage.addAuthor);
   }
+
+  const showListPage = () =>{
+    setShowPage(ShowPage.list)
+  }
+
     return(
     <ChakraProvider>
     <div className="AuthorHomePage">
@@ -24,7 +29,7 @@ export const AuthorHomePage = () => {
        </div>
     )}
      
-{showPage === ShowPage.addAuthor && <AddAuthor userName={"Testowy"}/>}
+{showPage === ShowPage.addAuthor && <AddAuthor backHandler={showListPage} userName={"Testowy"}/>}
     </div>
   </ChakraProvider>)
 }

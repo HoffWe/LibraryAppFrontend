@@ -50,8 +50,8 @@ export const ViewAuthors = (props: AddAuthorProps) => {
 
   return (
     <div>
-      <TableContainer>
-        <Table variant="striped" colorScheme="teal">
+      <TableContainer width={"50%"}  marginLeft={"auto"} marginRight={"auto"} paddingTop={"5%"}>
+        <Table backgroundColor={"teal"} borderRadius={"5px"} colorScheme="teal">
           <Thead>
             <Tr>
               <Th>Author name</Th>

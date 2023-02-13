@@ -9,6 +9,7 @@ import { ViewAuthors } from "./Components/Author/ViewAuthors";
 import { useAxios } from "./Hooks/useAxios";
 import { UpdateAuthor } from "./Components/Author/UpdateAuthor";
 import { AuthorHomePage } from "./Components/Author/AuthorHomePage";
+import { AppRouter } from "./router/App.router";
 
 
 function App() {
@@ -17,8 +18,9 @@ function App() {
   useAxios();
 
   return (
-
-    <AuthorHomePage />
+    <div>
+    <AppRouter />
+    </div>
   );
 
 }
