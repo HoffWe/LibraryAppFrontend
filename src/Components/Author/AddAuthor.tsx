@@ -5,10 +5,14 @@ import './AddAuthorCss.css';
 import { AuthorApi } from '../../Api/AuthorApi';
 import { ShowPage } from '../../Models/Author/showPage';
 import { ViewAuthors } from './ViewAuthors';
+import { useNavigate } from 'react-router';
+
+// guzik cancle działa nie wiem jak ale działa
 
 
 interface AddAuthorProps{
     userName: string;
+    backHandler:() =>void;
 }
 
 export const AddAuthor = (props: AddAuthorProps) => {
@@ -17,11 +21,8 @@ export const AddAuthor = (props: AddAuthorProps) => {
    const [isError, setIsError] = React.useState<boolean>(true);
    const [wasEdited, setWasEdited] = React.useState<boolean>(false);
    const [showPage, setShowPage] = useState(ShowPage.addAuthor);
+   const { backHandler} = props 
 
-
-   const backHandler = () => {
-    setShowPage(ShowPage.list);
-   }
   
   const handleSubmit = async () => {
     const result = await AuthorApi.postAuthor({ dateOfBirth: dateOfBirth,name: name })
@@ -62,15 +63,11 @@ export const AddAuthor = (props: AddAuthorProps) => {
         onChange = {onDateChanged}
         />
         <Button type="submit" colorScheme='blue' disabled={isError} onClick={handleSubmit}>Submit</Button>
-        <Button colorScheme='blue' onClick={backHandler}>Cancel</Button>
+        <Button colorScheme='blue' onClick={(backHandler)}>Cancel</Button>
         </div>
         )}
      
 {showPage === ShowPage.list && <ViewAuthors userName={"Testowy"}/>}
-
-
-
-
     </div>
     );
 }
