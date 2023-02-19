@@ -36,7 +36,7 @@ font-family: 'Courier New', Courier, monospace;
 export const StyleBody= styled.div`
 position:absolute;
 z-index: 2;
-transform: translate(70%,-850%);
+transform: translate(85%,-480%);
 font-size: 15px;
 color: rgb(3, 77, 188) ;
 text-shadow:rgb(30, 114, 240) ;
