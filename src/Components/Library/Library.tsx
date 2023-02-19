@@ -17,11 +17,11 @@ export const Library = () => {
             <h1><span>Zapraszamy do Nowoczesnej Biblioteki</span></h1>
             </StyleHeading >
         <StyleBody>
-            <h2>
-               U Nas każdy znajdzie coś dla siebie.<br/>
-                W swoich księgozbiorach posiadamy nakłady<br/> od różnych wydawnictw <br/>
-               Znajdziesz u Nas różne gatunki książek wg zapotrzebowania</h2>
-               </StyleBody>
+            <h2>„Kiedy masz jakieś wątpliwości, idź do biblioteki”</h2>
+            <h3> Joanne K. Rowling</h3>
+        <h2>    „Książka to mędrzec łagodny i pełen słodyczy,  <br/>który puste życie napełnia światłem, <br/>a puste serca wzruszeniem.”</h2>
+        <h3><br/>Kornel Makuszyński</h3>
+         </StyleBody>
    
          
         </LibraryContainer> 
