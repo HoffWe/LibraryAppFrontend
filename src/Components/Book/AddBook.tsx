@@ -23,7 +23,7 @@ export const AddBook = () => {
 
 
     const onSelectChanged = (e: React.ChangeEvent<HTMLSelectElement>)=>{
-        useEffect(()=>setBook(prevState => {return {...prevState,genres: [...prevState.genres,Genres.FANTASY]}}),[])
+        
     }
 
 

@@ -1,22 +1,37 @@
+import { Link, Outlet } from "react-router-dom";
+import AccountIcon from "../../icons/AccountIcon";
 
-import {Box, Button, ButtonGroup, Flex, Heading, LinkBox, Spacer } from '@chakra-ui/react'
-import { Link, Outlet } from 'react-router-dom'
-import LoginIcon from '../../icons/Login'
+import DrawerContext from "../../Context/DrawerContext";
+import { useContext } from "react";
+import{NavbarContainer,NavbarLinks,NavbarIcons,NavbarLibrary,NavbarBook,NavbarAuthor} from "./NavbarStyle";
+
+
 
 export const  Navbar = () => {
+  const {  toggleProfileDrawer } = useContext(DrawerContext);
+  
   return (
-    <>
-    <Flex bg='#1CDEFA' minWidth='max-content' alignItems='center' gap='2'>
-  <Box>
-        <Link to={'/'} >Home</Link>
-        <Link to={'/authorhomepage'}>AuthorHomePage</Link>
-  </Box>
-  <Spacer /> 
-  <Box>
-   < LoginIcon />
-  </Box>
-</Flex>
+  <>
+    <NavbarContainer>
+      <NavbarLinks>
+        <NavbarLibrary>
+      <Link className ="Library"to ={"/"}>Nowoczesna Biblioteka</Link></NavbarLibrary>
+      <NavbarBook>
+       <Link className ="Book"to ={"/Book"}>Książki</Link>  </NavbarBook>
+     
+       <NavbarAuthor>
+       <Link className ="Author"to ={"/AuthorHomePage"}>Autor</Link> </NavbarAuthor>
+      
+       </NavbarLinks>
+   
+      <NavbarIcons>
+      <AccountIcon style={{ cursor: "pointer" }} 
+         onClick={toggleProfileDrawer}/>
+           </NavbarIcons>
+        
+         </NavbarContainer>
     <Outlet/>
     </>
-  )
-}
+  
+  );
+};
