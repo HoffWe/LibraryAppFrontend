@@ -1,0 +1,21 @@
+import styled from "styled-components";
+
+export const ProfileDrawerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+  min-height: 100vh;
+  background:linear-gradient(to left, rgba(5, 91, 152, 0.455), rgb(50, 85, 241));
+`;
+export const UserName = styled.span`
+  font-size: 24px;
+  font-weight: 600;
+`;
+
+export const Email = styled.span`
+  font-size: 18px;
+  margin-bottom: 16px;
+`;
