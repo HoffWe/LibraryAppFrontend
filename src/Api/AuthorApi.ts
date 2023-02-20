@@ -9,6 +9,9 @@ export class AuthorApi{
     static getAuthors = async () =>
     await authorApi.get<Author[]>("/author")
 
+    static getAuthorsByName = async (searchTerm: string) =>
+    await authorApi.get<Author[]>("/author/name/"+ searchTerm)
+
     static postAuthor = async (author: AddAuthorRequest) =>
     await authorApi.post("/author", author)
 
