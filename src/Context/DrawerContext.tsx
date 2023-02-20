@@ -1,6 +1,7 @@
 import React, { createContext, useState } from "react";
 import { DrawerContextType } from "../Models/Drawer/DrawerContextType";
 import { ProfileDrawer } from "../Components/Drawer/ProfileDrawer";
+import { CartDrawer } from "../Components/Drawer/CartDrawer";
 
 const defaultSettings: DrawerContextType = {
   isCartDrawerOpen: false,
@@ -36,6 +37,10 @@ export const DrawerContextProvider = ({
       }}
     >
       {children}
+        <CartDrawer
+            isCartDrawerOpen={isCartDrawerOpen}
+            toggleCartDrawer={toggleCartDrawer}
+        />
       
       <ProfileDrawer
         isProfileDrawerOpen={isProfileDrawerOpen}

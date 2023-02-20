@@ -14,6 +14,7 @@ export enum Genres {
     YOUTH_NOVEL="Powieść młodzieżowa",
     TRAVELOG="Książka podróżnicza",
     COOKBOOK="Książka kucharska",
-    GUIDE="Poradnik"
+    GUIDE="Poradnik",
+    POETRY="Poezja"
 
 }
