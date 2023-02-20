@@ -1,1 +1,1 @@
-export const minCharToSearch = 3;
+export const minCharToSearch = 2;
