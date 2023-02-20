@@ -1,0 +1,66 @@
+.Picture-library{
+    background-image: url(../../assets/library.jpg);
+     z-index: 0;
+     position: relative;
+}
+
+input,
+button {
+    background: linear-gradient(to left, rgba(245, 243, 243, 0.822), rgb(245, 245, 241));
+    border: none;
+    border-radius: 17px;
+    box-shadow: 0px 8px 24px rgba(77, 69, 69, 0.3);
+    color: rgb(70, 67, 67);
+    padding: 12px 24px;
+    font-size: 15px;
+}
+
+input:hover,
+button:hover {
+    box-shadow: 0px 8 px 12px 0 rgba(96, 214, 125, 0.356)
+}
+
+button {
+    cursor: pointer;
+}
+
+.submit {
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 32px;
+    margin-top: 20px;
+    margin-right: 40px;
+    cursor: text;
+}
+
+label {
+    color: black;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    padding-right: 25px;
+}
+
+.form-container-r {
+    background: linear-gradient( to left, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.623));
+    max-width: 350px;
+    max-height: 600px;
+    border-radius: 15px;
+    box-shadow: 0px, 8px, 24px, 0 rgba (0, 0, 0, 0.3);
+    padding: 36px 24px;
+    text-align: center;
+    align-items: center;
+    margin-top: 300px;
+    z-index: 1;
+    position:relative;
+    transform: translate(130%,-230%);
+    
+}
+
+.link {
+    background: none;
+    color: rgb(12, 12, 12);
+    text-decoration: underline;
+}
