@@ -45,6 +45,7 @@ export const ViewAuthors = (props: AddAuthorProps) => {
         type="text"
         placeholder="Podaj imię autora"
         onChange={onSearchChange}
+
       />
       <TableContainer
       >

@@ -1,9 +1,10 @@
-import { TableContainer, Table, Thead, Tr, Th, Tbody, Td, Button, Card, CardBody, CardFooter, Heading, Stack, Image, Text, CardHeader, SimpleGrid, Container } from "@chakra-ui/react";
+import { TableContainer, Table, Thead, Tr, Th, Tbody, Td, Button, Card, CardBody, CardFooter, Heading, Stack, Image, Text, CardHeader, SimpleGrid, Container, Box } from "@chakra-ui/react";
 import { auto } from "@popperjs/core";
 import { useState, useEffect } from "react";
 import { AuthorApi } from "../../Api/AuthorApi";
 import Author from "../../Models/Author/Author";
 import './Top3Css.css';
+
 
 export const Top3Authors = () => {
 
@@ -22,7 +23,7 @@ export const Top3Authors = () => {
     return(
         <div id="container">    
           <Container  >
-          <h1> Top 3 Najlepszych autotorów!</h1>  
+          <h1> Top 3 najlepszych autorów!</h1>  
           {/* {authors.map((author) => ( */}
   
   <>
@@ -66,7 +67,7 @@ export const Top3Authors = () => {
 </SimpleGrid>
 </>
   {/* ))} */}
-<h1>Top 3 najlepsze Książki!</h1>
+<h1>Top 3 najlepsze książki!</h1>
 <SimpleGrid id="secsmallcontainer">
   <Card id = "firstcard">
     <CardHeader>
@@ -79,6 +80,11 @@ export const Top3Authors = () => {
       <Button>View here</Button>
     </CardFooter>
   </Card>
+
+
+
+
+
   <Card id = "firstcard">
     <CardHeader>
       <Heading size='md'> Customer dashboard</Heading>
