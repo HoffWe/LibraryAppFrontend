@@ -2,13 +2,9 @@
 
 import "./App.css";
 
-import { ChakraProvider } from "@chakra-ui/react";
-import { AddAuthor } from "./Components/Author/AddAuthor";
-import { SearchAuthorByName } from "./Components/Author/SearchAuthorByName";
-import { ViewAuthors } from "./Components/Author/ViewAuthors";
+
 import { useAxios } from "./Hooks/useAxios";
-import { UpdateAuthor } from "./Components/Author/UpdateAuthor";
-import { AuthorHomePage } from "./Components/Author/AuthorHomePage";
+import {CartContextProvider} from "./Context/CartContext";
 import { AppRouter } from "./router/App.router";
 import { withAxiosIntercepted } from "./Hooks/withAxiosInterceptor";
 import { ToastContainer } from "react-toastify";
@@ -25,11 +21,12 @@ function App() {
   return (
     <div>
      <UserContextProvider>
-     < DrawerContextProvider>
-    <AppRouter />
-    <ToastContainer/>
-    </DrawerContextProvider>
-   
+         <CartContextProvider>
+        < DrawerContextProvider>
+             <AppRouter />
+            <ToastContainer/>
+        </DrawerContextProvider>
+         </CartContextProvider>
     </UserContextProvider>
     </div>
   );

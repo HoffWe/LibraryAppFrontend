@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const PrimaryButton = styled.button`
 padding: 10px 16px;
   border: 0;
-  background-color: #24a0ed;
+  background-color: gray;
   border-radius: 8px;
-  color: white;
+  color: black;
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
@@ -19,9 +19,10 @@ export const SecondaryButton = styled.button`
   padding: 10px 16px;
   border: 1 px solid #02075D;
   border-radius: 8px;
-  color: #02075D;
+  color: black;
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
   margin-top: 8px;
+  margin-right: 8px;
 `;

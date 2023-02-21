@@ -6,7 +6,7 @@ import LibraryPic from "../../assets/library.jpg";
 
 export const Library = () => {
     
-    return ( <LibraryContainer> 
+    return ( <LibraryContainer>
     < StyleDrawinglibrary>
         <img src={LibraryPic} style ={{width: "100%", height: "100%"}} />
     </StyleDrawinglibrary>
