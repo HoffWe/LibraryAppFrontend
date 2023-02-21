@@ -1,6 +1,5 @@
 import React, {useCallback, useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import { AuthApi } from "../../Api/AuthApi";
 import { ACCESS_TOKEN } from "../../Constants/constants";
 import '../Register/Register.css';

@@ -9,6 +9,10 @@ export class AuthorApi{
     static getAuthors = async () =>
     await authorApi.get<Author[]>("/author")
 
+    static top3 =async () => 
+    await authorApi.get<Author[]>("/author/topAuthor")
+    
+
     static getAuthorsByName = async (searchTerm: string) =>
     await authorApi.get<Author[]>("/author/name/"+ searchTerm)
 
@@ -16,7 +20,9 @@ export class AuthorApi{
     await authorApi.post("/author", author)
 
     static updateAuthor =async (author: UpdateAuthorRequest ) => 
-    await authorApi.put("/author/{id}", author)// to pewnie nie przejdzie    
+    await authorApi.put("/author/{id}", author)
+    
+
     
 
     // static deleteAuthor =async () => 
