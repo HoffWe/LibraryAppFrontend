@@ -1,11 +1,12 @@
 import {Genres} from "../../Const/Genres";
+import exp from "constants";
 
-export type BookDto = {
+ export type BookDto = {
 
-    id:number,
-    title:string
-    author:string
-    releaseDate:string
-    genre:string
-    src: {}|unknown
+    id:string;
+    title:string;
+    authors:string[];
+    releaseDate:string;
+    genre:string;
+    src:string;
 }
