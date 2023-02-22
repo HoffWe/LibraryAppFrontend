@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import AccountIcon from "../../icons/AccountIcon";
-
+import CartIcon from "../../icons/CartIcon";
 import DrawerContext from "../../Context/DrawerContext";
 import { useContext } from "react";
 import{NavbarContainer,NavbarLinks,NavbarIcons,NavbarLibrary,NavbarBook,NavbarAuthor} from "./NavbarStyle";
@@ -8,23 +8,22 @@ import{NavbarContainer,NavbarLinks,NavbarIcons,NavbarLibrary,NavbarBook,NavbarAu
 
 
 export const  Navbar = () => {
-  const {  toggleProfileDrawer } = useContext(DrawerContext);
+  const { toggleCartDrawer, toggleProfileDrawer } = useContext(DrawerContext);
   
   return (
   <>
     <NavbarContainer>
       <NavbarLinks>
-        <NavbarLibrary>
-      <Link className ="Library"to ={"/"}>Nowoczesna Biblioteka</Link></NavbarLibrary>
-      <NavbarBook>
-       <Link className ="Book"to ={"/Book"}>Książki</Link>  </NavbarBook>
+
+      <NavbarLibrary className ="Library"to ={"/"}>Nowoczesna Biblioteka</NavbarLibrary>
+      <NavbarBook className ="Book"to ={"/Book"}>Książki</NavbarBook>
      
-       <NavbarAuthor>
-       <Link className ="Author"to ={"/AuthorHomePage"}>Autor</Link> </NavbarAuthor>
+       <NavbarAuthor className ="Author"to ={"/AuthorHomePage"}>Autorzy</NavbarAuthor>
       
        </NavbarLinks>
    
       <NavbarIcons>
+          <CartIcon style={{ cursor: "pointer" }} onClick={toggleCartDrawer} />
       <AccountIcon style={{ cursor: "pointer" }} 
          onClick={toggleProfileDrawer}/>
            </NavbarIcons>
