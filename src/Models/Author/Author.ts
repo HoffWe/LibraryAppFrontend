@@ -8,6 +8,7 @@ interface Author {
   books: Book[];
   genres: Genres;
   rating: number;
+  description: string;
 }
 
 export default Author;

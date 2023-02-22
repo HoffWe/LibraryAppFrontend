@@ -4,10 +4,17 @@ import {
   Thead,
   Tbody,
   Tr,
-  Th,
-  Td,
+  Th,Text,
   TableContainer,
   Input,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Heading,
+  SimpleGrid,
+  Container,
 } from "@chakra-ui/react";
 import "../../Models/Author/Author";
 import Author from "../../Models/Author/Author";
@@ -40,26 +47,16 @@ export const ViewAuthors = (props: AddAuthorProps) => {
   };
 
   return (
-    <div id="authorContainer">
-      <Input 
+    <div>
+      <div id="authorSearch">
+      <Input  
         type="text"
         placeholder="Podaj imię autora"
         onChange={onSearchChange}
-
-      />
-      <TableContainer
-      >
-        <Table >
-          <Thead>
-            <Tr>
-              <Th>Author name</Th>
-              <Th>Date of birth</Th>
-              <Th> Rating </Th>
-              {/* <Th>Action</Th>
-              <Th>Action</Th> */}
-            </Tr>
-          </Thead>
-          <Tbody>
+        
+      /></div>
+        
+      <div id="mainContainer">
             {authors
               .filter((author) => {
                 return search.toLowerCase() === ""
@@ -67,18 +64,28 @@ export const ViewAuthors = (props: AddAuthorProps) => {
                   .includes(search);
               })
               .map((author) => (
-                <Tr key={author.id}>
-                  <Td>{author.name}</Td>
-                  <Td>{author.dateOfBirth}</Td>
-                  <Td>{author.rating} / 5</Td>
-                  {/* <Td><Button colorScheme='teal'onClick={handleEdit} >Edit</Button></Td>
-                
-                <Td><Button colorScheme='red'>Delete</Button></Td> */}
-                </Tr>
-              ))}
-          </Tbody>
-        </Table>
-      </TableContainer>
-    </div>
+  
+                <>
+                <SimpleGrid id="smallContainer" >
+              
+                  <Card key={author.id} id = "card" >
+                    <CardHeader>
+                      <Heading size='md'>{author.name}</Heading>
+                    </CardHeader>
+                    <CardBody id="cardBody">
+                      <Text>{author.description}</Text>
+                    </CardBody>
+                    <CardFooter>
+                      <Button>View here</Button>
+                    </CardFooter>
+                  </Card>
+                  
+              
+                </SimpleGrid>
+              </>
+                ))}
+      </div>
+      </div>
+
   );
 };
