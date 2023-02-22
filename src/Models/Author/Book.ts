@@ -1,8 +1,16 @@
+import { Genres } from "./Genres";
+
 interface Book {
     id: string;
-    bookName: string;
+    title:string
+
+    isbn:number
+    quantity:number
+    releaseDate:Date
+
+    genres: Genres;
+
+
 }
-
-
 
 export default Book;
