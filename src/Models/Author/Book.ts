@@ -7,8 +7,8 @@ interface Book {
     isbn:number
     quantity:number
     releaseDate:Date
-
-    genres: Genres;
+    src:string
+    genres: Genres
 
 
 }

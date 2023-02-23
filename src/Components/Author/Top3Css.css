@@ -85,9 +85,9 @@ button
     padding-left: 2vh;
     padding-right: 2vh;
 }
-/* #imgBox
+#imgBox
 {
-    min-height: 10vh;
-    min-width: 10vw;
-    background-color: rgb(0, 13, 255);
-} */
+    
+    max-height: 10vh;
+    max-width: 10vw;
+}

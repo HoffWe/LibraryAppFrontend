@@ -82,8 +82,7 @@ export const ViewAuthors = (props: AddAuthorProps) => {
                     <CardBody id="cardBody">
                       <Text>{author.description}</Text>
                     </CardBody>
-                    <Box>
-                     
+                    <Box>                    
                     <ItemPhoto src={author.src} alt={"Author"} />
                     </Box>
                     <CardFooter>

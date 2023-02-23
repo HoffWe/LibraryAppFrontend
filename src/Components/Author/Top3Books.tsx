@@ -1,7 +1,8 @@
-import { Container,Text, SimpleGrid, Card, CardHeader, Heading, CardBody, CardFooter, Button } from "@chakra-ui/react";
+import { Container,Text, SimpleGrid, Card, CardHeader, Heading, CardBody, CardFooter, Button, Box } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { BookApi } from "../../Api/BookApi";
 import Book from "../../Models/Author/Book";
+import { ItemPhoto } from "../Book/Books.styles";
 import './Top3Css.css';
 
 
@@ -14,7 +15,13 @@ export const Top3Books = () => {
 
     const loadBooks =async () => {
       const result = await BookApi.top3Books();
-      setBooks(result.data)
+      setBooks(result.data.map((book) =>{
+        return {
+          ...book,
+          src: `${process.env.PUBLIC_URL}/Images/Books/${book.id}.jpeg`,
+        };
+
+      }))
       
     }
 
@@ -27,6 +34,10 @@ export const Top3Books = () => {
 
 <SimpleGrid id="booksmallcontainer">
   <Card key={book.id} id = "bookcard">
+  <Box>
+                     
+  <ItemPhoto src={book.src} alt={"Book"} />
+  </Box>
     <CardHeader>
       <Heading size='md'>{book.title}</Heading>
     </CardHeader>
