@@ -15,11 +15,13 @@ import {
   Heading,
   SimpleGrid,
   Container,
+  Box,
 } from "@chakra-ui/react";
 import "../../Models/Author/Author";
 import Author from "../../Models/Author/Author";
 import { AuthorApi } from "../../Api/AuthorApi";
 import './ViewAuthorCss.css';
+import { ItemContainer, ItemPhoto } from "../Book/Books.styles";
 
 
 interface AddAuthorProps {
@@ -37,7 +39,12 @@ export const ViewAuthors = (props: AddAuthorProps) => {
 
   const loadAuthors = async () => {
     const result = await AuthorApi.getAuthors();
-    setAuthors(result.data);
+    setAuthors(result.data.map((author) => {
+      return{
+        ...author,
+        src: `${process.env.PUBLIC_URL}/Images/Authors/${author.id}.jpeg`,
+      }
+    }));
   };
 
   const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -75,6 +82,10 @@ export const ViewAuthors = (props: AddAuthorProps) => {
                     <CardBody id="cardBody">
                       <Text>{author.description}</Text>
                     </CardBody>
+                    <Box>
+                     
+                    <ItemPhoto src={author.src} alt={"Author"} />
+                    </Box>
                     <CardFooter>
                       <Button>View here</Button>
                     </CardFooter>

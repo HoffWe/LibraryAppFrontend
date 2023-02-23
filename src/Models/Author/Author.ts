@@ -9,6 +9,7 @@ interface Author {
   genres: Genres;
   rating: number;
   description: string;
+  src: string;
 }
 
 export default Author;
