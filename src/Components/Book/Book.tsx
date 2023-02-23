@@ -7,6 +7,7 @@ import {ItemPhoto,
 import CartContext from "../../Context/CartContext";
 import {useContext} from "react";
 import {PrimaryButton} from "../GlobalStyle";
+import Author from "../../Models/Book/Author";
 
 
 type BookProps = {
@@ -19,13 +20,13 @@ export const Book = ({ book }: BookProps) => {
         addBook(book);
     };
 
-    // @ts-ignore
+
     return (
         <ItemContainer>
-            <ItemPhoto src={Object.values(book.src)} alt={"Book"} />
+            <ItemPhoto src="" alt={"Book"} />
             <DataContainer>
-                    <ImportantInfo>{book.title}</ImportantInfo>
-                    <span>{book.author}</span>
+                    <ImportantInfo key={book.id}>{book.title}</ImportantInfo>
+                    <span>{book.authors.map((x) => <p>{x}</p>)}</span>
             </DataContainer>
             <PrimaryButton onClick={onAddToCart}>Add to cart</PrimaryButton>
         </ItemContainer>

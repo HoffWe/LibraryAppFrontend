@@ -1,32 +1,58 @@
-import React, {useState} from "react";
-import {BooksList} from "../../Models/Book/BooksList";
+import React, {useEffect, useState} from "react";
 import {BookDto} from "./BookDto";
 import {StoreContainer
 ,ItemsContainer,
-PaginationContainer,
 } from "./AllBooks.styles";
 import {Book} from "./Book";
+import {ChakraProvider, Input} from "@chakra-ui/react";
+import {BookApi} from "../../Api/BookApi";
+
 
 export const AllBooks = ()=> {
-    const [books, setBooks] = useState<BookDto[]>(BooksList)
+    const [books, setBooks] = useState<BookDto[] >([])
+    const [search, setSearch] = useState("")
+
+    useEffect(()=>{
+        loadBooks()
+    },[]
+    )
+
+    const loadBooks = async () => {
+        const result = await BookApi.allBooks()
+        setBooks((result.data))
+    }
+
+    const onSearchChange = (e : React.ChangeEvent<HTMLInputElement>) =>{
+        setSearch(e.target.value)
+    }
+    useEffect( () => { if (search.length >0){
+        const filteredBooks = books.filter((books) => books.title.toLowerCase().includes(search.toLowerCase()))
+        setBooks(filteredBooks)}else
+        loadBooks()
+    },[search])
 
     return (
-
+    <ChakraProvider>
         <StoreContainer>
-            <h1>Wybierz książkę, którą zawsze chciałeś przeczytać !</h1>
-            {books?.length >0 ? (
+            <Input
+                type="text"
+                placeholder="Podaj tytuł książki"
+                onChange={onSearchChange}
+            />
+            <h1>Wypożycz książkę, którą zawsze chciałeś przeczytać !</h1>
+            {books.length > 0 ? (
                 <>
                     <ItemsContainer>
                         {books?.map((x) => (
                             <Book book={x} />
                         ))}
                     </ItemsContainer>
-
-                </>
-            ) : (
-                <h2>Nie mamy aktualnie żadnych produktów, zajrzyj do nas później</h2>
-            )}
+                    </>
+                    ) : (
+                    <h2>Nie mamy aktualnie żadnych produktów, zajrzyj do nas później</h2>
+                    )}
         </StoreContainer>
+    </ChakraProvider>
 
 
 

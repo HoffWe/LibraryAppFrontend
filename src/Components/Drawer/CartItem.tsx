@@ -29,7 +29,7 @@ export const CartItem = (props: CartItemProps) => {
     return (
         <CartItemContainer>
             <LeftSide>
-                <Thumbnail alt={"Book"} src={Object.values(props.book.src)} />
+                <Thumbnail alt={"Book"} src={props.book.src} />
                 <DetailsContainer>
                     <div>
                         <Name>{props.book.title}</Name>

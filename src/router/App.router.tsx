@@ -23,7 +23,7 @@ export const AppRouter = () => {
 
         <Route index element={<Home />} />
         {/* //<Route index element={<Library/>} /> */}
-        <Route path='book'element={<AddBook/>}> Książki</Route>
+        <Route path='book'element={<AllBooks/>}> Książki</Route>
 
         <Route path='authorhomepage' element={<AuthorHomePage />}>Autor</Route>
         <Route path='login' element={<Login />}>Logowanie</Route>
