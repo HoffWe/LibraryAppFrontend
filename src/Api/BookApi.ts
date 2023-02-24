@@ -4,7 +4,7 @@ import {BookDto} from "../Components/Book/BookDto";
 
 export class BookApi{
     static top3Books =async () => 
-    await bookApi.get<Book[]>("/books/topBook")
+    await bookApi.get<BookDto[]>("/books/topBook")
 
     static allBooks = async () =>
         await bookApi.get<BookDto[]>("/books")
