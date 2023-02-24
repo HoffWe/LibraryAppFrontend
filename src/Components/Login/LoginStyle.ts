@@ -62,7 +62,7 @@ export const LoginButton = styled.button`
     filter: brightness(85%);
   }
   `;
-
+    
 export const ValidationError = styled.span`
   color: red;
   font-size: 13px;

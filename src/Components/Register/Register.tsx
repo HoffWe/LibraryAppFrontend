@@ -108,7 +108,7 @@ export const Register = () => {
             <RegisterButton
               disabled={!isUsernameValid || !isPasswordValid}
               onClick={onLoginClicked}
-            >
+            >     
               Zarejestruj się
             </RegisterButton>
           </div>

@@ -9,7 +9,7 @@ export const RegisterContainer = styled.div`
  height: 100%;
 
 `;
-
+    
 export const StyledHeading = styled.span`
   font-size: 30px;
   font-weight: 600;
