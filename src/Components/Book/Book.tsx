@@ -8,7 +8,6 @@ import {
 import CartContext from "../../Context/CartContext";
 import { useContext } from "react";
 import { PrimaryButton } from "../GlobalStyle";
-import Author from "../../Models/Book/Author";
 
 type BookProps = {
   book: BookDto;

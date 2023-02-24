@@ -1,14 +1,15 @@
-import {Button, Card, CardBody, CardFooter, Heading, Stack, Image, Text, CardHeader, SimpleGrid, Container, Box } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { AuthorApi } from "../../Api/AuthorApi";
-import Author from "../../Models/Author/Author";
-import { ItemPhoto } from "../Book/Books.styles";
-import './Top3Css.css';
+import { Author } from "./Author";
+import { AuthorDto } from "./AuthorDto";
+import { AuthorsContainer, Header, ItemsAuthorContainer } from "./Top3.style";
+
 
 
 export const Top3Authors = () => {
 
-    const [authors, setAuthors] = useState<Author[]>([]); //domyślna wartośc stanu // dodanie czego po czym będziemy iterować
+    const [authors, setAuthors] = useState<AuthorDto[]>([]); //domyślna wartośc stanu // dodanie czego po czym będziemy iterować
 
     useEffect(() => {
       loadAuthors(); 
@@ -26,36 +27,25 @@ export const Top3Authors = () => {
 
 
     return(
-<div >  
-<h1> Top 3 najlepszych autorów!</h1>    
-  <Container  id="container">
+      <ChakraProvider>
+        <AuthorsContainer>
+          <Header><h1>Zobacz nasze Top wśród 3 autorów!</h1></Header>
+          {authors.length > 0 ? (
+          <>
+            <ItemsAuthorContainer>
+              {authors?.map((x) => (
+                <Author author={x} />
+              ))}
+            </ItemsAuthorContainer>
+          </>
+        ) : (
+          <h2>Aktualnie lista autorów jest niedostępna. Zapraszamy później</h2>
+        )}
+        </AuthorsContainer>
 
-  {authors.map((author) => (
-  
-  <>
-  <SimpleGrid id="smallContainer" >
 
-    <Card key={author.id} id = "firstcard" >
-    <Box id="imgBox">
-    <ItemPhoto src={author.src} alt={"Author"} />
-    </Box>
-      <CardHeader>
-        <Heading size='md'>{author.name}</Heading>
-      </CardHeader>
-      <CardBody id="cardBody">
-        <Text>{author.description}</Text>
-      </CardBody>
 
-      <CardFooter>
-        <Button>View here</Button>
-      </CardFooter>
-    </Card>
-    
 
-  </SimpleGrid>
-</>
-  ))} 
-  </Container>
-        </div>
+      </ChakraProvider>
     )
 }

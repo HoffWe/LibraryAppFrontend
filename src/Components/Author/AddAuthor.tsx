@@ -67,7 +67,7 @@ export const AddAuthor = (props: AddAuthorProps) => {
         </div>
         )}
      
-{showPage === ShowPage.list && <ViewAuthors userName={"Testowy"}/>}
+{showPage === ShowPage.list && <ViewAuthors />}
     </div>
     );
 }
