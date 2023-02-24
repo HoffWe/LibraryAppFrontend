@@ -1,61 +1,44 @@
-import { Container,Text, SimpleGrid, Card, CardHeader, Heading, CardBody, CardFooter, Button, Box } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { BookApi } from "../../Api/BookApi";
-import Book from "../../Models/Author/Book";
-import { ItemPhoto } from "../Book/Books.styles";
-import './Top3Css.css';
-
+import { BookDto } from "../Book/BookDto";
+import { Book } from "../Book/Book";
+import { Header, ItemsContainer, StoreContainer } from "./Top3.style";
 
 export const Top3Books = () => {
-    const [books, setBooks] = useState<Book[]>([]);
-    
-    useEffect(()=>{
-      loadBooks();
-    }, []);
+  const [books, setBooks] = useState<BookDto[]>([]);
 
-    const loadBooks =async () => {
-      const result = await BookApi.top3Books();
-      setBooks(result.data.map((book) =>{
+  useEffect(() => {
+    loadBooks();
+  }, []);
+
+  const loadBooks = async () => {
+    const result = await BookApi.top3Books();
+    setBooks(
+      result.data.map((book) => {
         return {
           ...book,
           src: `${process.env.PUBLIC_URL}/Images/Books/${book.id}.jpeg`,
         };
+      })
+    );
+  };
 
-      }))
-      
-    }
-
-    return(
-        <div>
-<h1>Top 3 najlepsze książki!</h1>
-  <Container id="bookcontainer">
-    {books.map((book)=>(
-      <>
-
-<SimpleGrid id="booksmallcontainer">
-  <Card key={book.id} id = "bookcard">
-  <Box>
-                     
-  <ItemPhoto src={book.src} alt={"Book"} />
-  </Box>
-    <CardHeader>
-      <Heading size='md'>{book.title}</Heading>
-    </CardHeader>
-    <CardBody id="bookCardBody">
-      <Text>Lorem ipsum dolor sit amet. Est eaque voluptatum qui 
-          culpa doloribus aut repudiandae similique et quidem illum.
-           Ea beatae distinctio ut nostrum ullam ex doloremque error 
-           ab corrupti quibusdam ut animi incidunt aut sapiente 
-           illum id quia deleniti!</Text>
-    </CardBody>
-    <CardFooter>
-      <Button>View here</Button>
-    </CardFooter>
-  </Card>
-</SimpleGrid>
-</>
-    ))}
-</Container>
-        </div>
-    )
-}
+  return (
+    <StoreContainer>
+      <Header>
+        <h1>Zobacz nasze Top wśród 3 książek!</h1>
+      </Header>
+      {books.length > 0 ? (
+        <>
+          <ItemsContainer>
+            {books?.map((x) => (
+              <Book book={x} />
+            ))}
+          </ItemsContainer>
+        </>
+      ) : (
+        <h2>Nie mamy aktualnie żadnych produktów, zajrzyj do nas później</h2>
+      )}
+    </StoreContainer>
+  );
+};

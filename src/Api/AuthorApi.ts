@@ -1,3 +1,4 @@
+import { AuthorDto } from "../Components/Author/AuthorDto";
 import { authorApi } from "../Hooks/useAxios";
 import { AddAuthorRequest } from "../Models/Author/AddAuthorRequest";
 import Author from "../Models/Author/Author";
@@ -7,10 +8,10 @@ import { UpdateAuthorRequest } from "../Models/Author/UpdateAuthorRequest";
 
 export class AuthorApi{
     static getAuthors = async () =>
-    await authorApi.get<Author[]>("/author")
+    await authorApi.get<AuthorDto[]>("/author")
 
     static top3 =async () => 
-    await authorApi.get<Author[]>("/author/topAuthor")
+    await authorApi.get<AuthorDto[]>("/author/topAuthor")
     
 
     static getAuthorsByName = async (searchTerm: string) =>

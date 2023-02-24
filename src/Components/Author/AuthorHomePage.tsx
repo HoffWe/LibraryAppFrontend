@@ -24,7 +24,7 @@ export const AuthorHomePage = () => {
     
     {showPage === ShowPage.list && ( 
       <div>
-       <ViewAuthors userName={"Testowy Test"} />
+       <ViewAuthors  />
        {/* <Button colorScheme='teal' onClick={addAuthorHandler}>Add New Author</Button> */}
        </div>
     )}
