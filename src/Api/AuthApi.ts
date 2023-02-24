@@ -10,7 +10,7 @@ export class AuthApi {
   
   
   static signIn = async (request: SignInRequest) =>
-    await axios.post<SignInResponse>("/auth/signin", request);
+    await axios.post<SignInResponse>("/auth/login", request);
   
    
 }
