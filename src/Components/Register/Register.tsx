@@ -28,14 +28,14 @@ export const Register = () => {
 
   const onLoginClicked = useCallback(async () => {
     try {
-      const result = await AuthApi.signIn({
+      const result = await AuthApi.login({
         username: username,
         password: password,
       });
 
       localStorage.setItem(ACCESS_TOKEN, result.data.accessToken);
       userModifier({ ...result.data });
-      toast.success("Poprawnie zalogowano", {
+      toast.success("Poprawna rejestracja", {
         position: toast.POSITION.TOP_RIGHT,
       });
       navigate("/");
