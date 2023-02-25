@@ -7,12 +7,13 @@ import {
   RegisterInput,
   StyledHeading,
   ValidationError,
+  LoginLink,
 } from "./RegisterStyle";
 import { toast } from "react-toastify";
 import { ACCESS_TOKEN } from "../../Constants/constants";
 // tsconfig.json
 import UserContext from "../../Context/UserContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { StyleDrawinglibrary } from "../Library/LibraryStyle";
 import LibraryPic from "../../assets/library.jpg";
 
@@ -115,6 +116,10 @@ export const Register = () => {
             >
               Zarejestruj się
             </RegisterButton>
+            <LoginLink>
+          <span>Posiadasz konto?</span>
+          <Link to={"/Login"}>Zaloguj się</Link>
+        </LoginLink>
           </div>
         </StyleDrawinglibrary>
       </InputContainer>
