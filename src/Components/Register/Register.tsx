@@ -19,18 +19,22 @@ import LibraryPic from "../../assets/library.jpg";
 export const Register = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [isUsernameValid, setIsUsernameValid] = useState<boolean>(true);
+  const [email, setEmail] = useState <string>("");
+    const [isUsernameValid, setIsUsernameValid] = useState<boolean>(true);
   const [isPasswordValid, setIsPasswordValid] = useState<boolean>(true);
 
   const navigate = useNavigate();
 
   const { userModifier } = useContext(UserContext);
 
-  const onLoginClicked = useCallback(async () => {
+  const onRegisterClicked = useCallback(async () => {
     try {
-      const result = await AuthApi.login({
+      const result = await AuthApi.register({
         username: username,
         password: password,
+        email: email,
+        role: []
+   
       });
 
       localStorage.setItem(ACCESS_TOKEN, result.data.accessToken);
@@ -52,7 +56,7 @@ export const Register = () => {
         position: toast.POSITION.TOP_RIGHT,
       });
     }
-  }, [username, password, userModifier, navigate]);
+  }, [username, password, email, userModifier, navigate]);
 
   useEffect(() => {
     setIsUsernameValid(username.length > 0);
@@ -92,7 +96,7 @@ export const Register = () => {
             <RegisterInput
               style={{ margin: "0 0 16px 0" }}
               placeholder="Nazwa użytkownika"
-              type="email"
+              type="username"
               onChange={(e) => onUsernameChange(e)}
             ></RegisterInput>
             {!isUsernameValid && (
@@ -107,7 +111,7 @@ export const Register = () => {
             {!isPasswordValid && <ValidationError>Wpisz hasło</ValidationError>}
             <RegisterButton
               disabled={!isUsernameValid || !isPasswordValid}
-              onClick={onLoginClicked}
+              onClick={onRegisterClicked}
             >
               Zarejestruj się
             </RegisterButton>
