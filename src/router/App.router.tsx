@@ -10,7 +10,7 @@ import { Navbar } from '../Components/Navbar/Navbar'
 import { AddBook } from '../Components/Book/AddBook';
 import {Login} from '../Components/Login/Login';
 import { Library } from '../Components/Library/Library';
-import { Register } from '../Components/Register/Register';
+import {Register} from "../Components/Register/Register";
 import {AllBooks} from "../Components/Book/AllBooks";
 
 
