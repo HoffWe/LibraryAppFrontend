@@ -92,7 +92,7 @@ export const Login = () => {
             <LoginInput
               style={{ margin: "0 0 16px 0" }}
               placeholder="Nazwa użytkownika"
-              type="email"
+              type="username"
               onChange={(e) => onUsernameChange(e)}
             ></LoginInput>
             {!isUsernameValid && (

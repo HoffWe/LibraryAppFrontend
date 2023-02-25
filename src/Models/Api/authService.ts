@@ -4,4 +4,5 @@ export type authService = {
      email: string
      roles: string[]
      accessToken: string
+    
 }
