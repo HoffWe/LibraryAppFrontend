@@ -1,4 +1,4 @@
-import { Container } from "@chakra-ui/react";
+import { border, Container } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -26,7 +26,7 @@ export const ShowAuthor = () => {
       {author.map((author) => (
         <>
           <Header>
-            <p >
+            <p  >
               Imię authora:<br></br> {author.name}{" "}
             </p>
           </Header>

@@ -4,6 +4,7 @@ import { StoreContainer, ItemsContainer } from "./AllBooks.styles";
 import { Book } from "./Book";
 import { ChakraProvider, Input } from "@chakra-ui/react";
 import { BookApi } from "../../Api/BookApi";
+import { Header } from "../Author/Top3.style";
 
 export const AllBooks = () => {
   const [books, setBooks] = useState<BookDto[]>([]);
@@ -45,7 +46,7 @@ export const AllBooks = () => {
           placeholder="Podaj tytuł książki"
           onChange={onSearchChange}
         />
-        <h1>Wypożycz książkę, którą zawsze chciałeś przeczytać !</h1>
+        <Header><h1>Wypożycz książkę, którą zawsze chciałeś przeczytać !</h1></Header>
         {books.length > 0 ? (
           <>
             <ItemsContainer>
