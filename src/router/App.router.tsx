@@ -15,6 +15,7 @@ import {AllBooks} from "../Components/Book/AllBooks";
 import { UnauthorizedRoute } from '../Components/UnauthorizedRoute'
 import { ProtectedRoute } from '../Components/ProtectedRoute'
 import { Profile } from '../Components/profile/Profile'
+import { ShowAuthor } from '../Components/Author/ShowAuthor'
 
 
 export const AppRouter = () => {
@@ -29,6 +30,7 @@ export const AppRouter = () => {
         <Route path='book'element={<AllBooks/>}> Książki</Route>
 
         <Route path='authorhomepage' element={<AuthorHomePage />}>Autor</Route>
+        <Route path='authorhomepage/:id' element={<ShowAuthor />}>Autor</Route>
         <Route path='login' 
         element={
         <UnauthorizedRoute>

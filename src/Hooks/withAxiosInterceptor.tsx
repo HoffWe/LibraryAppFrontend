@@ -28,6 +28,7 @@ export function withAxiosIntercepted<T extends JSX.IntrinsicAttributes>(
           config.headers["Authorization"] = `Bearer ${localStorage.getItem(
             ACCESS_TOKEN
           )}`;
+          
         }
 
         return {

@@ -2,6 +2,8 @@ import { AuthorDto } from "./AuthorDto";
 import { AuthorContainer, DataAuthorContainer, ImportantAuthorInfo, ItemAuthorPhoto } from "./Author.styles";
 import { PrimaryButton } from "../GlobalStyle";
 
+import { Link } from "react-router-dom";
+
 
 type AuthorProps = {
     author: AuthorDto;
@@ -10,7 +12,7 @@ type AuthorProps = {
   export const Author = ({ author }: AuthorProps) => {
   
     // const showAuthor = () => {
-    //   show(author)
+      
     // };
   
     return (
@@ -21,9 +23,10 @@ type AuthorProps = {
         
         </DataAuthorContainer>
         
-        <PrimaryButton 
-        // onClick={showAuthor}
+        <Link to={`/authorhomepage/${author.id}`}>
+          <PrimaryButton 
         >Show more</PrimaryButton>
+        </Link>
         
       </AuthorContainer>
       

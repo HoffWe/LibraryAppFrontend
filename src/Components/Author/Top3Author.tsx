@@ -29,7 +29,7 @@ export const Top3Authors = () => {
     return(
       <ChakraProvider>
         <AuthorsContainer>
-          <Header><h1>Zobacz nasze Top wśród 3 autorów!</h1></Header>
+          <Header><h1>Zobacz nasze Top 3 wśród autorów!</h1></Header>
           {authors.length > 0 ? (
           <>
             <ItemsAuthorContainer>
