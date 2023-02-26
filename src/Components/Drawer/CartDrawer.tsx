@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useMemo } from "react";
+import React, {useCallback, useContext, useMemo, useState} from "react";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +16,6 @@ interface CartDrawerProps {
 export const CartDrawer = (props: CartDrawerProps) => {
     const { books } = useContext(CartContext);
     const navigate = useNavigate();
-
     const groupItems = useCallback(() => {
         const grouped = groupBy(books, (book) => book.id );
 
@@ -30,15 +29,21 @@ export const CartDrawer = (props: CartDrawerProps) => {
             });
         }
 
+
         return result;
     }, [books]);
+
+
+
+
 
     const groupedItems = useMemo(() => groupItems(), [groupItems]);
 
 
+
     return (
         <Drawer
-            size={600}
+            size={500}
             open={props.isCartDrawerOpen}
             onClose={props.toggleCartDrawer}
             direction="right"

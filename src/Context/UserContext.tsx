@@ -37,9 +37,9 @@ export const UserContextProvider = ({ children }: React.PropsWithChildren) => {
   }, [fetchUser, currentUser]);
 
   return (
-    <UserContext.Provider value={{ currentUser, userModifier }}>
-      {children}
-    </UserContext.Provider>
+      <UserContext.Provider value={{ currentUser, userModifier }}>
+        {children}
+      </UserContext.Provider>
   );
 };
 

@@ -2,12 +2,15 @@ import React, { createContext, useState } from "react";
 import { DrawerContextType } from "../Models/Drawer/DrawerContextType";
 import { ProfileDrawer } from "../Components/Drawer/ProfileDrawer";
 import { CartDrawer } from "../Components/Drawer/CartDrawer";
+import {SearchDrawer} from "../Components/Drawer/SearchDrawer";
 
 const defaultSettings: DrawerContextType = {
   isCartDrawerOpen: false,
   toggleCartDrawer: () => {},
   isProfileDrawerOpen: false,
   toggleProfileDrawer: () => {},
+    isSearchDrawerOpen: false,
+    toggleSearchDrawer: () => {}
 };
 
 export const DrawerContext = createContext<DrawerContextType>(defaultSettings);
@@ -18,6 +21,8 @@ export const DrawerContextProvider = ({
   const [isCartDrawerOpen, setIsCartDrawerOpen] = useState<boolean>(false);
   const [isProfileDrawerOpen, setIsProfileDrawerOpen] =
     useState<boolean>(false);
+    const [isSearchDrawerOpen, setIsSearchDrawerOpen] =
+        useState<boolean>(false);
 
   const toggleCartDrawer = () => {
     setIsCartDrawerOpen(!isCartDrawerOpen);
@@ -27,13 +32,22 @@ export const DrawerContextProvider = ({
     setIsProfileDrawerOpen(!isProfileDrawerOpen);
   };
 
-  return (
+    const toggleSearchDrawer = () => {
+        setIsSearchDrawerOpen(!isSearchDrawerOpen);
+    };
+
+
+
+    return (
     <DrawerContext.Provider
       value={{
         isCartDrawerOpen,
         toggleCartDrawer,
         isProfileDrawerOpen,
         toggleProfileDrawer,
+          isSearchDrawerOpen,
+          toggleSearchDrawer
+
       }}
     >
       {children}
@@ -46,6 +60,11 @@ export const DrawerContextProvider = ({
         isProfileDrawerOpen={isProfileDrawerOpen}
         toggleProfileDrawer={toggleProfileDrawer}
       />
+
+        <SearchDrawer
+            isSearchDrawerOpen={isSearchDrawerOpen}
+            toggleSearchDrawer={toggleSearchDrawer}
+        />
     </DrawerContext.Provider>
   );
 };

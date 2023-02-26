@@ -4,6 +4,7 @@ import { StoreContainer, ItemsContainer } from "./AllBooks.styles";
 import { Book } from "./Book";
 import { ChakraProvider, Input } from "@chakra-ui/react";
 import { BookApi } from "../../Api/BookApi";
+import {Header} from "../Author/ViewAuthors.style";
 
 export const AllBooks = () => {
   const [books, setBooks] = useState<BookDto[]>([]);
@@ -31,7 +32,7 @@ export const AllBooks = () => {
   useEffect(() => {
     if (search.length > 0) {
       const filteredBooks = books.filter((books) =>
-        books.title.toLowerCase().includes(search.toLowerCase())
+       books.title.toLowerCase().includes(search.toLowerCase())
       );
       setBooks(filteredBooks);
     } else loadBooks();
@@ -40,12 +41,13 @@ export const AllBooks = () => {
   return (
     <ChakraProvider>
       <StoreContainer>
+        <Header><h3>Znajdź książkę, którą zawsze chciałeś przeczytać</h3></Header>
         <Input
-          type="text"
-          placeholder="Podaj tytuł książki"
-          onChange={onSearchChange}
+            type="text"
+            placeholder="Podaj tytuł książki"
+            onChange={onSearchChange}
+            width="50%"
         />
-        <h1>Wypożycz książkę, którą zawsze chciałeś przeczytać !</h1>
         {books.length > 0 ? (
           <>
             <ItemsContainer>

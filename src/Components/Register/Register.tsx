@@ -1,58 +1,57 @@
 import React, {useCallback, useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthApi } from "../../Api/AuthApi";
-import { ACCESS_TOKEN } from "../../Constants/constants";
 import '../Register/Register.css';
 import LibraryPict from "../../assets/library.jpg";
+import {UserApi} from "../../Api/UserApi";
+import {Input} from "@chakra-ui/react";
 
 
-export const Register =(props: any) =>{
+export const Register =() =>{
 
     const [username, setUsername] = useState<string>('');
     const [email, setEmail] = useState<string>('');
-    const [pass, setPass] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
     const[isEmailValid, setIsEmailValid] = useState<boolean>(true);
     const[isPasswordValid, setIsPasswordValid] =useState <boolean>(true)
-    const [password, setPassword] = useState<string>('');
+
        
         const navigate = useNavigate(); // przekierowanie na uzytkownika
 
-        
-        const handleSubmit = (e:any) =>{
-            e.preventDefault();
-            console.log(email);
+
+        const handleSubmit = async () =>{
+            const result = await UserApi.addUser({username: username, password: password})
+        }
     
       
             navigate('/')
-    }
+
+
+
 
     return(
 
-        <nav className="Container">
+       <div>
         < div className = "Picture-Library">
      <img src={LibraryPict} style ={{width: "100%", height: "100%"}} /> </div>  
         
         <div className="form-container-r">
-             
-        <form className ="register-form" onSubmit = {handleSubmit}>
+
         <form autoComplete="off">
             <label htmlFor="username">Podaj swoje imię</label>
-           <input value={username} onChange={(e)=>setUsername(e.target.value)} name="name" id="name" placeholder="Podaj swoje imię"/>
+            <Input value={username} onChange={(e)=>setUsername(e.target.value)} placeholder="Podaj swoje imię" ></Input>
            
             <label htmlFor="email">Email</label>
-            <input value={email} onChange={(e)=>setEmail(e.target.value)} type ="email" placeholder ="Podaj swój adres email" id="email" name="email"/>
+            <Input value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Podaj e-mail" ></Input>
             
             <label htmlFor="password">Hasło</label>
-            <input value={password} onChange={(e)=>setPassword(e.target.value)} type ="password" placeholder ="Podaj swoje hasło" id="password" name="password"/>
+            <Input value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Podaj swoje imię" ></Input>
             <button className="submit" type="submit"  disabled={!isEmailValid || !isPasswordValid}
-          onClick={Register}>Załóż konto</button>
+          onClick={handleSubmit}>Załóż konto</button>
            
         </form>
-        </form>
-        <a href="login" className="link" onClick={()=>props.onFormSwitch('Login')}>Jeśli posiadasz konto - Zaloguj się</a>
 
         </div>
-        </nav>
+       </div>
     )
 }
 
