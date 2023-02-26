@@ -62,4 +62,4 @@ export const AllBooks = () => {
       </StoreContainer>
     </ChakraProvider>
   );
-};
+}

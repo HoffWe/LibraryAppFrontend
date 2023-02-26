@@ -66,14 +66,14 @@ export const CartDrawer = (props: CartDrawerProps) => {
                 ) : (
                     <CartDrawerContainer>
                         <h2>Brak książek</h2>
-                        <p>Wypełnij swój koszyk przechodząc do sklepu</p>
+                        <p>Wypełnij swoją listę przechodząc do biblioteki</p>
                         <PrimaryButton
                             onClick={() => {
-                                navigate("/store");
+                                navigate("/book");
                                 props.toggleCartDrawer();
                             }}
                         >
-                            Przejdź do sklepu
+                            Przejdź do biblioteki
                         </PrimaryButton>
                     </CartDrawerContainer>
                 )}
