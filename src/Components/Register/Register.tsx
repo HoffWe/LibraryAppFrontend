@@ -74,6 +74,9 @@ export const Register = () => {
   const onPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
+  const onEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  };
 
   return (
     <RegisterContainer>
@@ -103,6 +106,13 @@ export const Register = () => {
             {!isUsernameValid && (
               <ValidationError>Wpisz nazwę użytkownika</ValidationError>
             )}
+                <RegisterInput
+              style={{ margin: "16px 0 0 0" }}
+              onChange={(e) => onEmailChange(e)}
+              placeholder="email"
+              type="email"
+            ></RegisterInput>
+            {!isPasswordValid && <ValidationError>Wpisz email</ValidationError>}
             <RegisterInput
               style={{ margin: "16px 0 0 0" }}
               onChange={(e) => onPasswordChange(e)}
@@ -110,6 +120,7 @@ export const Register = () => {
               type="password"
             ></RegisterInput>
             {!isPasswordValid && <ValidationError>Wpisz hasło</ValidationError>}
+        
             <RegisterButton
               disabled={!isUsernameValid || !isPasswordValid}
               onClick={onRegisterClicked}
