@@ -8,7 +8,11 @@ import {
 import CartContext from "../../Context/CartContext";
 import { useContext } from "react";
 import { PrimaryButton } from "../GlobalStyle";
+
 import { Link } from "react-router-dom";
+
+import SearchContext from "../../Context/SearchContext";
+
 
 type BookProps = {
   book: BookDto;
@@ -26,16 +30,21 @@ export const Book = ({ book }: BookProps) => {
       <ItemPhoto src={book.src} alt={"Book"} />
       <DataContainer>
 
-      <Link to={`/book/${book.id}`}><ImportantInfo key={book.id}>{book.title}</ImportantInfo></Link>
+        <ImportantInfo key={book.id}>{book.title}</ImportantInfo>
+        <h4 >
+          {book.authors.map((x) => (
 
-        <span>
-          {/* {book.authors.map((x) => (
             <p>{x}</p>
-          ))} */}
-        </span>
+          ))}
+        </h4>
+          <span>Dostępna ilość : {book.quantity} </span>
       </DataContainer>
 
+
       <PrimaryButton onClick={onAddToCart}>Add to cart</PrimaryButton>
+
+      <PrimaryButton onClick={onAddToCart}>Dodaj do listy</PrimaryButton>
+
     </ItemContainer>
   );
 };

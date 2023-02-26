@@ -8,8 +8,10 @@ export const ProfileDrawerContainer = styled.div`
   text-align: center;
   padding: 16px;
   min-height: 100vh;
-  background:linear-gradient(to left, rgba(5, 91, 152, 0.455), rgb(50, 85, 241));
 `;
+
+// 1vh = 1% of veiwport height 100vh = 100% of height.
+
 export const UserName = styled.span`
   font-size: 24px;
   font-weight: 600;

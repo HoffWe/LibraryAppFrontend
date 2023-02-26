@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useEffect, useState } from "react";
-import { UserContextType } from "../Models/Api/UserContextType";
+import { UserContextType } from "../Models/Api/userContextType";
 import { User } from "../Models/Api/User";
 import { ACCESS_TOKEN } from "../Constants/constants";
 import { UserApi } from "../Api/UserApi";
@@ -37,9 +37,9 @@ export const UserContextProvider = ({ children }: React.PropsWithChildren) => {
   }, [fetchUser, currentUser]);
 
   return (
-    <UserContext.Provider value={{ currentUser, userModifier }}>
-      {children}
-    </UserContext.Provider>
+      <UserContext.Provider value={{ currentUser, userModifier }}>
+        {children}
+      </UserContext.Provider>
   );
 };
 

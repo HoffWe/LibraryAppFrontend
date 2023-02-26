@@ -7,5 +7,6 @@ export type BookDto = {
   authors: string[];
   releaseDate: string;
   genre: string;
+  quantity: number;
   src: string;
 };

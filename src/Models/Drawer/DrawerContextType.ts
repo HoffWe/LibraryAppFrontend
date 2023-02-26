@@ -3,4 +3,6 @@ export type DrawerContextType = {
     toggleCartDrawer: () => void
     isProfileDrawerOpen: boolean,
     toggleProfileDrawer: () => void,
+    isSearchDrawerOpen:boolean,
+    toggleSearchDrawer: () => void
 }

@@ -8,4 +8,10 @@ export class BookApi{
 
     static allBooks = async () =>
         await bookApi.get<BookDto[]>("/books")
+
+    static  getBooksByAuthor = async (params: string) =>
+        await bookApi.get<BookDto[]>("/books/author/"+params)
+
+    static  getBooksByGenre = async (params: string) =>
+        await bookApi.get<BookDto[]>("/books/genre"+params)
 }

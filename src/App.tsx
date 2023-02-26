@@ -13,6 +13,7 @@ import { DrawerContextProvider } from "./Context/DrawerContext";
 import { UserContextProvider } from "./Context/UserContext";
 import {useState} from "react";
 import {BookDto} from "./Components/Book/BookDto";
+import {SearchContextProvider} from "./Context/SearchContext";
 
 
 function App() {
@@ -26,7 +27,9 @@ function App() {
      <UserContextProvider>
          <CartContextProvider>
         < DrawerContextProvider>
-             <AppRouter />
+            <SearchContextProvider>
+            <AppRouter />
+            </SearchContextProvider>
             <ToastContainer/>
         </DrawerContextProvider>
          </CartContextProvider>
