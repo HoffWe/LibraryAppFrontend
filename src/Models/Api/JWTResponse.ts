@@ -1,4 +1,4 @@
-export type authService = {
+export type JWTResponse = {
     username: string
      password: string
      email: string

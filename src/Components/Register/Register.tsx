@@ -30,11 +30,11 @@ export const Register = () => {
 
   const onRegisterClicked = useCallback(async () => {
     try {
-      const result = await AuthApi.register({
+      const result = await AuthApi.signup({
         username: username,
         password: password,
         email: email,
-        role: []
+        
    
       });
 

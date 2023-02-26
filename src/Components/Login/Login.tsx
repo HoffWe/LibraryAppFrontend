@@ -29,7 +29,7 @@ export const Login = () => {
 
   const onLoginClicked = useCallback(async () => {
     try {
-      const result = await AuthApi.login({
+      const result = await AuthApi.signin({
         username: username,
         password: password,
       });

@@ -1,4 +1,5 @@
-export type AuthRequest = {
+export type LoginRequest = {
+
     username: string;
     password: string;
 
