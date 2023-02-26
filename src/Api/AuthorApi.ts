@@ -12,6 +12,9 @@ export class AuthorApi{
 
     static top3 =async () => 
     await authorApi.get<AuthorDto[]>("/author/topAuthor")
+
+    // static getAuthorById = async () => 
+    // await authorApi.get<AuthorDto[]>("/author/${id}")
     
 
     static getAuthorsByName = async (searchTerm: string) =>

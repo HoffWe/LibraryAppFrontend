@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useEffect, useState } from "react";
-import { UserContextType } from "../Models/Api/userContextType";
+import { UserContextType } from "../Models/Api/UserContextType";
 import { User } from "../Models/Api/User";
 import { ACCESS_TOKEN } from "../Constants/constants";
 import { UserApi } from "../Api/UserApi";

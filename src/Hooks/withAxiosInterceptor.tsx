@@ -19,7 +19,7 @@ export function withAxiosIntercepted<T extends JSX.IntrinsicAttributes>(
       axios.interceptors.request.use((config: AxiosRequestConfig) => {
         return {
           ...config,
-          baseURL: process.env.REACT_APP_API_URL,
+          baseURL: process.env.REACT_APP_AUTHOR_API_URL,
         };
       });
 
@@ -28,11 +28,12 @@ export function withAxiosIntercepted<T extends JSX.IntrinsicAttributes>(
           config.headers["Authorization"] = `Bearer ${localStorage.getItem(
             ACCESS_TOKEN
           )}`;
+          
         }
 
         return {
           ...config,
-          baseURL: process.env.REACT_APP_API_URL,
+          baseURL: process.env.REACT_APP_AUTHOR_API_URL,
         };
       });
 
