@@ -1,7 +1,7 @@
 #addAuthor
 {
     
-    background-color: rgb(118, 197, 247);
+    background-color: rgb(204, 235, 255);
     width: 300px;
     padding: 50px;
     margin-left: auto;
@@ -11,7 +11,14 @@
     -webkit-box-shadow: 16px -8px 6px -3px rgba(66, 68, 90, 1);
     -moz-box-shadow: 16px -8px 6px -3px rgba(66, 68, 90, 1);
     box-shadow: 16px -8px 6px -3px rgba(66, 68, 90, 1);
+    
+    
+    
 
+
+
+
+    
 }
 /* input[type=text],
 input[type=datetime-local]

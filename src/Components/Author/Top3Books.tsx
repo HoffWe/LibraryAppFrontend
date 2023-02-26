@@ -26,7 +26,7 @@ export const Top3Books = () => {
   return (
     <StoreContainer>
       <Header>
-        <h1>Zobacz nasze Top wśród 3 książek!</h1>
+        <h1>Zobacz nasze Top 3 wśród książek!</h1>
       </Header>
       {books.length > 0 ? (
         <>
